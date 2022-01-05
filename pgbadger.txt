@@ -1,0 +1,13 @@
+pgbadger
+
+titlestring
+top number
+timezone
+exclude query regex
+log-timezone
+
+
+1 tane
+2 klasör:
+application user only
+applicationuser@clientname.public
