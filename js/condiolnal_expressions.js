@@ -1,6 +1,7 @@
 /**
  *  LOGICAL EXPRESSIONS
- *  && 
+ *  && - And bool && bool -> bool
+ *  || -> OR bool || bool -> bool
  * 
  * 
  * 
