@@ -7,8 +7,8 @@
 
 // Variables
 /*
-    var var_name = value;
-    Sayılar: Tam Sayılar, Float ve Double
+    var/const/let var_name = value;
+    Sayılar: int, Float ve Double
     String: Yazi "yazi ", 'yazi'
     Boolean: true ya da false
     Object: { key:value}

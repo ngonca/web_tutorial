@@ -4,6 +4,7 @@ const person = {
     'gender' : "Other"    
 }
 
+console.log(person.lastname);
 person.lastname = "gümfsfds";
-console.log(person['name'])
-console.log(typeof person)
+console.log(person.lastname)
+
