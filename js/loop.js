@@ -14,8 +14,7 @@ for (let index = 0; index < 20; index += 2) {
 /*
 while( condition ){
 logic ifade while döngüsü çalışır
-
-
+ipojşıhlugkyftudrfyguhıjşokioıhu
 }
 */
 let i = 0;
