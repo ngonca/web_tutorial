@@ -5,6 +5,7 @@
  * logic true döndüğü sürece for döner.
  */
 
+
 for (let index = 0; index < 20; index += 2) {
     
 
@@ -22,4 +23,15 @@ while(i< 20){
 
     console.log(i);
     i++;
+}
+
+while(true){
+
+    console.log(i);
+    i++;
+
+    if(i>100)
+        break;
+
+        
 }

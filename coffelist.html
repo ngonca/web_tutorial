@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Kahve Listesi</h2>
+    <ul id="foo"; style="list-style: decimal;" ></ul>
+    <form id="myform">
+        <input type="text" name="cofee_name" id="cinput">
+        <button type="submit">Add Coffe</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        const kahve_list = document.getElementById('foo');
+        const girilen_kahve = document.getElementById('cinput');
+        const json_kahveler = JSON.parse(localStorage.getItem('kahveler'));
+        const kahveler = json_kahveler || []; 
+
+        json_kahveler.forEach(element => {
+            addCoffe(element);
+            
+        });
+
+        function addCoffe(coffe_name){
+            const li = document.createElement('li');
+            li.innerHTML = coffe_name;
+            kahve_list.appendChild(li);
+
+        }
+        form.onsubmit = (event) => {
+            if(kahveler.indexOf(girilen_kahve.value) !== -1){
+                alert("Zaten Listede");
+                return;
+            }
+            kahveler.push(girilen_kahve.value);
+            event.preventDefault();
+            addCoffe(girilen_kahve.value);
+            console.log(kahveler);
+            localStorage.setItem('kahveler',JSON.stringify(kahveler));
+
+        }
+
+    </script>
+
+    
+</body>
+</html>
