@@ -56,12 +56,91 @@ function find_avergae3(arr){
 
 }
 
+module.exports = {
+    find_avergae3,
+    find_average
+}
 
 //print( find_average( [1,23,12,14,15]) )
 
 //print( find_average2( [1,23,12,14,15]) )
 
-print( find_avergae3( [1,23,12,14,15]) )
+//print( find_avergae3( [1,23,12,14,15]) );
+function line(a,b,c){
+    let x,y,z ;
+    if( a>=b && a>=c) {
+    x = a;
+    // console.log(String(a)+">"+String(b)+">"+String(c));
+    
+    if(b>c){
+        y = b;
+        z =  c;
+    }else{
+        y = c;
+        z =  b;
+    }
+
+    }else if (b >= a && b >=c )
+    {
+        x = b;
+        if(a>c){
+            y = a;
+            z =  c;
+        }else{
+            y = c;
+            z =  a;
+        }
+
+    }else{
+        x = c;
+        if(a>b){
+            y = a;
+            z =  b;
+        }else{
+            y = b;
+            z =  a;
+        }
+
+    }
+    console.log(`${x} > ${y} > ${z}`)
+
+}
+
+
+function find_min(arr){
+    let min = arr[0];
+
+    for (let index = 1; index < arr.length; index++) {
+       if(arr[index] < min ){
+           min = arr[index];
+       }
+        
+    }
+    return min;
+
+}
+
+
+function selection_sort(arr){
+
+
+}
+
+// [1,2,3,-4,-50,23,12,44]
+
+//line(7,5,3);
+
+//line(3,5,9);
+
+//line(3,5,5);
+
+// index:   0    1   2   3
+// arr  :   3   -1  10  40
+
+console.log( find_min([1,3,7,-12,4,-24,-99]) );
+
+
+
 
 
 
