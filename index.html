@@ -16,6 +16,8 @@
       -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
 
 </head>
 
@@ -68,14 +70,14 @@
     <br>
     <form action=" process.php" method="post">
         <label for="What's your color ?">What's your color ?</label>
-        <select name="What's your color ?">
+        <select name="What's your color ?" id="wine">
             <option value="Red wine">Red wine</option>
             <option value="Rose wine">Rose wine</option>
             <option value="White wine">White wine</option>
             <option value="No idea">No idea</option>
         </select> <br> <br>
         <label for="Where's the origin of wine ?">Where's the origin of wine ?</label>
-        <select name="Where's the origin of wine ?">
+        <select name="Where's the origin of wine ?" id="origin">
             <option value="Malesia">Malesia</option>
             <option value="France">France</option>
             <option value="England">England</option>
@@ -83,13 +85,13 @@
             <option value="None">None</option>
         </select> <br><br>
         <label for="Rate the hardness of the wine 1 to 3">Rate the hardness of the wine 1 to 3 </label>
-        <select name="Rate the hardness of the wine 1 to 3">
+        <select name="Rate the hardness of the wine 1 to 3" id="hardness">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
         </select><br><br>
         <label for="What'd you choose with wine">What'd you choose with wine</label>
-        <select name="What'd you choose with wine">
+        <select name="What'd you choose with wine" id="extras">
             <option value="mac&cheese">mac&cheese</option>
             <option value="fruits">fruits</option>
             <option value="chips">chips</option>
@@ -99,31 +101,100 @@
         <br><br>
         <label>If there's any problem let us know:</label>
         <br><br>
-        <textarea name="If there's any problem let us know:" id="g" cols="50" rows="5"></textarea>
+        <textarea id="comment" name="If there's any problem let us know:" cols="50" rows="5"></textarea>
         <br><br>
-        <a type="button" class="btn btn-primary" href="www.google.com"> 
-            Contact us here !
+        <a type="button" style="border-radius: 10px;" class="btn btn-success" onclick="send_data(event)"> 
+            Submit Data
         </a>
         <aside>
-            <h3>Sources</h3>
+            <h3>Comments</h3>
             <nav>
-                <ul style="background-color: red;" class="list-group" >
-                    <li style="color: brown;" class="list-group-item"><a href="#"></a>source 1</li>
-                    <li style="color: blueviolet;" class="list-group-item"><a href="#"></a>source 2</li>
-                    <li class="list-group-item"><a href="#"></a>source 3</li>
-                    <li class="list-group-item"><a href="#"></a>source 4</li>
+                <ul style="background-color: red;" class="list-group" id="commnetlist" >
+                 
+                    
                 </ul>
             </nav>
         </aside>
 
         <header id="main-footer"></header>
+
         <footer>
             <p>Copyright &copy; 2021 , My Website</p>
         </footer>
-
        
 </body>
-<button type="button" onclick="alert('Bitch you here ! ')">Click on me pleaseee</button>
+
+
+
+
 <script src="/js/course2.js">
 </script>
+
+<script>
+
+
+
+    const wine = document.getElementById("wine");
+    const hardness = document.getElementById("hardness");
+    const origin = document.getElementById("origin");
+    const extras = document.getElementById("extras");
+    const comment = document.getElementById("comment");
+    const comul = document.getElementById("commnetlist");
+
+
+
+
+
+    function bas(event){
+        $.ajax({
+            url: "http://localhost:3000/comments",
+            type: 'GET',
+            dataType: 'html', // added data type
+            success: function(res) {
+                comul.innerHTML = res;
+            }
+        });
+        
+    }
+
+    function send_data(event){
+
+        const sending_data = {
+            "wine": wine.options[wine.selectedIndex].text,
+            "hardness": hardness.options[hardness.selectedIndex].text,
+            "origin": origin.options[origin.selectedIndex].text,
+            "extras": extras.options[extras.selectedIndex].text,
+            "comment" : comment.value
+        }
+
+        console.log(sending_data);
+
+        $.ajax({
+            url: 'http://localhost:3000/nazli',
+            dataType: 'text',
+            type: 'post',
+            contentType: 'application/json',
+            data: JSON.stringify( sending_data ),
+            success: function( data, textStatus, jQxhr ){
+                console.log(data);
+                bas({});
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+    });
+
+   
+
+    }
+
+
+</script>
+<script>
+    $( window ).on( "load", function() {
+        bas("");
+    });
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 </html>

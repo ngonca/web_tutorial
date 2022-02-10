@@ -37,9 +37,9 @@
  */
 var nazli = ['n','a','z','l','i'];
 console.log(nazli);
-console.log(nazli.sort());
+console.log( nazli.sort() );
 nazli.push('nurullah'); // appends the new elements
-console.log(nazli);
+console.log(nazli); 
 nazli.splice(1,1); // start, delete count
 console.log(nazli);
 console.log(nazli[0]); // 0. elemanı yazdır
@@ -56,7 +56,7 @@ fruits.pop();  // remove the latest element
 console.log("[] is Array: "+Array.isArray([]));
 console.log(fruits.indexOf('oranges'));
 console.log(fruits[1]); 
-alert('HELLO AŞKIM');
+//alert('HELLO AŞKIM');
 console.dir(document);
 document.querySelector('h1').innerHTML = "bienvenue a todos" ;
 
