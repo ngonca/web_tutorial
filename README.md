@@ -4,3 +4,4 @@
 - Classes
 - Promises
 - Asynchronous Programmming
+- Events
