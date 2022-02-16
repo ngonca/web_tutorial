@@ -69,6 +69,8 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+
+                <button class="btn btn-outline-success" type="button" id="btnbas">Bas</button>
             </div>
         </div>
     </nav>
@@ -192,7 +194,11 @@
             <label>If there's any problem let us know:</label>
             <textarea class="form-control" id="comment" name="If there's any problem let us know:" cols="50"
                 rows="5"></textarea>
-            <a type="button" style="border-radius: 10px;" class="btn btn-success" onclick="send_data(event)">
+                
+                <p id="yazi">Test</p>
+
+            
+                <a type="button" style="border-radius: 10px;" class="btn btn-success" onclick="send_data(event)">
                 Submit Data
             </a>
             <aside>
@@ -232,6 +238,20 @@
     const comul = document.getElementById("commnetlist");
     const datas = document.getElementById("winelist");
 
+    const btnbas = document.getElementById("btnbas");
+    comment.addEventListener("input",function(event){
+       document.getElementById("yazi").innerText=comment.value;
+    });
+    btnbas.addEventListener("mouseover", function (){
+        
+    });
+    wine.addEventListener("change",function(event){
+        console.log(event);
+        if(wine.selectedIndex != 3)
+            alert("Good Choice "+ wine.options[wine.selectedIndex].text);
+        else
+            alert("Why no idea!")
+    });
 
     function getWines(){
             $.ajax({
@@ -318,6 +338,8 @@
     $(window).on("load", function () {
         bas("");
         getWines();
+
+    
     });
 </script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
