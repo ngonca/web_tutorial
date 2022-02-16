@@ -58,7 +58,6 @@ console.log(fruits.indexOf('oranges'));
 console.log(fruits[1]); 
 //alert('HELLO AŞKIM');
 console.dir(document);
-document.querySelector('h1').innerHTML = "bienvenue a todos" ;
 
 
 
