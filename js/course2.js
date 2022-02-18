@@ -36,28 +36,28 @@
  *  'n' <- isim[0]
  */
 var nazli = ['n','a','z','l','i'];
-console.log(nazli);
-console.log( nazli.sort() );
+//console.log(nazli);
+//console.log( nazli.sort() );
 nazli.push('nurullah'); // appends the new elements
-console.log(nazli); 
-nazli.splice(1,1); // start, delete count
-console.log(nazli);
-console.log(nazli[0]); // 0. elemanı yazdır
-console.log(nazli.length);
+//console.log(nazli); 
+//nazli.splice(1,1); // start, delete count
+//console.log(nazli);
+//console.log(nazli[0]); // 0. elemanı yazdır
+//console.log(nazli.length);
 
 
 const numbers = new Array( 1,2,3,4,5);
-console.log(numbers); 
+//console.log(numbers); 
 const fruits = ['apples','oranges','pears'];
 fruits[3] = 'grapes';
 fruits.push('mangos');
 fruits.unshift('strawberries'); // insert new item at the begining the array
 fruits.pop();  // remove the latest element
-console.log("[] is Array: "+Array.isArray([]));
-console.log(fruits.indexOf('oranges'));
-console.log(fruits[1]); 
+//console.log("[] is Array: "+Array.isArray([]));
+//console.log(fruits.indexOf('oranges'));
+//console.log(fruits[1]); 
 //alert('HELLO AŞKIM');
-console.dir(document);
+
 
 
 
