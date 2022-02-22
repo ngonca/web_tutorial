@@ -137,7 +137,85 @@ function selection_sort(arr){
 // index:   0    1   2   3
 // arr  :   3   -1  10  40
 
-console.log( find_min([1,3,7,-12,4,-24,-99]) );
+//console.log( find_min([1,3,7,-12,4,-24,-99]) );
+
+// soru soruyorum... Soru: Girilen yazıyı tersten yazdıran fonksiyonu yaz!
+// örn: tersten("Hello"); çıktı: "olleH"
+function tersten(text){ 
+    console.log(text);
+    let ters = ""
+ for (let index = text.length-1 ; index >= 0; index--) {
+     let harf = text[index];
+     ters = ters + harf;
+ }
+ return ters;
+}
+
+
+function is_polindrom(text){
+    text = String(text);
+    if(tersten(text)===text){ 
+console.log("POLİNDROM SAYIDIR!"); 
+}
+else console.log("POLİNDROM SAYI DEĞİLDİR");
+};
+
+function tersten2(text){
+    let phrase = "";
+    /** hello
+     *  ""
+     *   olleh
+     */
+    for (let index = 0; index < text.length; index++) {
+        phrase =  text[index] + phrase ;
+        console.log(phrase);
+    }
+}
+
+
+tersten("nurullah");
+tersten2("nazli");
+/*
+console.log("ABC".charCodeAt(1));
+
+console.log(String.fromCharCode(65));
+
+for (let i = "a".charCodeAt(0); i <= "z".charCodeAt(0); i++) {
+    console.log(String.fromCharCode(i));
+    
+}
+nazli
+qd?om
+*/
+function sifrele(text){
+let sifreli ="";
+    for (let index = 0; index < text.length; index++) {
+    let element = text[index];
+    //String.fromCharCode(element.charCodeAt(0) + 3);
+sifreli = sifreli + String.fromCharCode(element.charCodeAt(0) + 3);
+    
+} 
+console.log(sifreli);
+}
+
+function desifre(text){
+    let sifreli ="";
+    for (let index = 0; index < text.length; index++) {
+    let element = text[index];
+    String.fromCharCode(element.charCodeAt(0) - 3);
+sifreli = sifreli + String.fromCharCode(element.charCodeAt(0) - 3);
+    
+} 
+console.log(sifreli);
+
+}
+
+//sifrele("abc");
+//desifre("qxuxoodk");
+is_polindrom(1234054321);
+
+
+
 
 
 
